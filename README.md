@@ -1,4 +1,4 @@
 # scroll-tracker
-track page scroll with scaling bar
+> Track page scroll with a custom trailing bar
 
-## live link - https://sanjibdey104.github.io/scroll-tracker/
+### live link - https://sanjibdey104.github.io/scroll-tracker/
