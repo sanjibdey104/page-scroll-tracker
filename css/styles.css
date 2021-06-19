@@ -44,22 +44,33 @@ ul {
   padding: 2rem 0;
 }
 
+@media (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+}
+
 .scroll-tracker {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: 4px;
   background-color: #bb86fc;
+  background: -webkit-gradient(linear, right top, left top, from(#bb86fc), to(rgba(130, 255, 130, 0.753)));
+  background: linear-gradient(right, #bb86fc, rgba(130, 255, 130, 0.753));
+}
+
+.date {
+  font-size: 0.85rem;
 }
 
 .title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(100%, 1.75rem, 2.5rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   margin-bottom: 3rem;
 }
 
 .content {
-  font-size: clamp(100%, 0.5rem, 1rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,6 +89,8 @@ ul {
   padding-left: 1rem;
   font-size: 0.9rem;
   border-left: 5px solid #bb86fc;
+  -webkit-transform: translateX(-1rem);
+          transform: translateX(-1rem);
   margin: 1.5rem 0;
 }
 
@@ -89,7 +102,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 2rem 0;
 }
 
@@ -99,9 +112,9 @@ ul {
 }
 
 .articles article {
-  -webkit-box-shadow: 0 0 5px #bb86fc;
-          box-shadow: 0 0 5px #bb86fc;
-  padding: 0.5rem;
+  -webkit-box-shadow: 0 0 1rem #000, inset 2px 2px 5px #7d52b1a6;
+          box-shadow: 0 0 1rem #000, inset 2px 2px 5px #7d52b1a6;
+  padding: 0.75rem;
   font-size: 0.9rem;
   border-radius: 0.5rem;
 }

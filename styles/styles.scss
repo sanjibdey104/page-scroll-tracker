@@ -4,6 +4,8 @@ $secondary-font: 'Playfair Display', serif;
 $bg-dark: #121212;
 $text-color: #ffffffda;
 $accent-color: #bb86fc;
+$green-tint: rgba(130, 255, 130, 0.753);
+$box-shadow-accent: #7d52b1a6;
 
 html {
   font-family: 100%;
@@ -47,24 +49,32 @@ ul {
   width: 50%;
   margin: 0 auto;
   padding: 2rem 0;
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 }
 
 .scroll-tracker {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
-  background-color: #bb86fc;
+  height: 4px;
+  background-color: $accent-color;
+  background: linear-gradient(right, $accent-color, $green-tint);
+}
+
+.date {
+  font-size: 0.85rem;
 }
 
 .title {
   font-family: $secondary-font;
-  font-size: clamp(100%, 1.75rem, 2.5rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   margin-bottom: 3rem;
 }
 
 .content {
-  font-size: clamp(100%, 0.5rem, 1rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -75,6 +85,7 @@ ul {
     padding-left: 1rem;
     font-size: 0.9rem;
     border-left: 5px solid $accent-color;
+    transform: translateX(-1rem);
     margin: 1.5rem 0;
   }
 }
@@ -83,7 +94,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 2rem 0;
   
   &>* {
@@ -91,8 +102,8 @@ ul {
   }
   
   article {
-    box-shadow: 0 0 5px $accent-color;
-    padding: 0.5rem;
+    box-shadow: 0 0 1rem #000, inset 2px 2px 5px $box-shadow-accent;
+    padding: 0.75rem;
     font-size: 0.9rem;
     border-radius: 0.5rem;
   }
