@@ -2,3 +2,7 @@
 > Track page scroll with a custom trailing bar
 
 ### live link - https://sanjibdey104.github.io/page-scroll-tracker/
+
+
+## Screenshot
+![sample screenshot](./screenshot/sample.png)
