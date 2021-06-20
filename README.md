@@ -5,4 +5,4 @@
 
 
 ## Screenshot
-![sample screenshot](./screenshot/sample.png)
+![sample screenshot](./screenshot/working-screenshot.png)
