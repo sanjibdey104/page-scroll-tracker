@@ -1,34 +1,25 @@
 const scrollTracker = document.querySelector('.scroll-tracker');
 
-let body = document.body;
-let html = document.documentElement;
-
-window.addEventListener('DOMContentLoaded', () => {
-    adjustScrollTracker();
+window.addEventListener('scroll', () => {
+    handleScroll();
 })
 
 
-window.addEventListener('resize', () => {
-   adjustScrollTracker();
-})
+const handleScroll = () => {
+    let body = document.body;
+    let html = document.documentElement;
 
-
-const adjustScrollTracker = () => {
     let totalDocHeight = Math.max(
-        body.scrollHeight, html.scrollHeight,
-        body.offsetHeight, html.offsetHeight,
-        body.clientHeight, html.clientHeight
-      );
-    let clientHeight = html.clientHeight;
-    heightToScroll = totalDocHeight - clientHeight;
+      body.scrollHeight, html.scrollHeight,
+      body.offsetHeight, html.offsetHeight,
+      body.clientHeight, html.clientHeight
+    );
 
-    window.addEventListener('scroll', () => {
-        let scrolledFromTop = html.scrollTop;
-        let heightLeftToScroll = heightToScroll - scrolledFromTop;
-        
-        let rawScrolledPercentage = 100 - ((heightLeftToScroll/heightToScroll)*100);
-        let ceiledScrollPercentage = Math.round(rawScrolledPercentage);
-      
-        scrollTracker.style.width=`${ceiledScrollPercentage}%`
-    });
+    let scrolledFromTop = window.scrollY;
+    let windowHeight = window.innerHeight;
+    let heightToScroll = totalDocHeight - windowHeight;
+    
+    let rawScrollPercentage = (scrolledFromTop / heightToScroll) * 100;
+    let roundedScrollPercentage = Math.round(rawScrollPercentage);
+    scrollTracker.style.width=`${roundedScrollPercentage}%`;
 }
